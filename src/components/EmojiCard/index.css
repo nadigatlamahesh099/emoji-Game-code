@@ -1,0 +1,45 @@
+.each-list {
+  background: linear-gradient(to right, #9c98ef, #d3b3df);
+  border: 3px solid #ffffff33;
+  border-radius: 15px;
+  width: 110px;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+}
+.emoji-button {
+  margin: 5px;
+  align-self: center;
+  border-radius: 10px;
+  width: 92px;
+  background-color: transparent;
+  height: 75px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .each-list {
+    width: 180px;
+    height: 120px;
+  }
+
+  .emoji-button {
+    margin: 5px;
+    width: 162px;
+    height: 105px;
+    padding-right: 15px;
+  }
+}
+.emoji {
+  height: 45px;
+  width: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .emoji {
+    height: 65px;
+    width: 80px;
+  }
+}
