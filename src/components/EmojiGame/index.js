@@ -51,7 +51,6 @@ class EmojiGame extends Component {
               imageUrl:
                 'https://assets.ccbp.in/frontend/react-js/won-game-img.png',
               scoreTitle: 'Best Score',
-              altValue: 'win',
               score,
             },
           ],
@@ -65,7 +64,6 @@ class EmojiGame extends Component {
               imageUrl:
                 'https://assets.ccbp.in/frontend/react-js/lose-game-img.png',
               scoreTitle: 'Score',
-              altValue: 'lose',
               score,
             },
           ],
