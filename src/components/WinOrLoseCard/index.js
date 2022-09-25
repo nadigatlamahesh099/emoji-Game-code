@@ -30,7 +30,7 @@ const WinOrLoseCard = props => {
               Play Again
             </button>
           </div>
-          <img src={imageUrl} className="won-image" alt={altValue} />
+          <img src={imageUrl} className="won-image" alt="win or lose" />
         </div>
       </div>
     </>
