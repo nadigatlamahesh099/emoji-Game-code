@@ -1,8 +1,8 @@
 import './index.css'
 
 const WinOrLoseCard = props => {
-  const {wonOrLoseLists, playAgainButton} = props
-  const {title, imageUrl, scoreTitle, score, altValue} = wonOrLoseLists[0]
+  const {wonOrLoseLists, playAgainButton,realScore} = props
+  const {title, imageUrl, scoreTitle,altValue} = wonOrLoseLists[0]
 
   const onPlayAgain = () => {
     playAgainButton()
@@ -25,7 +25,7 @@ const WinOrLoseCard = props => {
           <div className="details-container">
             <h1 className="won-head">{title}</h1>
             <p className="won-para">{scoreTitle}</p>
-            <p className="won-score">{score}/12</p>
+            <p className="won-score">{realScore}/12</p>
             <button type="button" className="play-button" onClick={onPlayAgain}>
               Play Again
             </button>
