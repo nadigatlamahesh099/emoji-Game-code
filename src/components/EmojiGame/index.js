@@ -35,15 +35,28 @@ class EmojiGame extends Component {
   }
 
   changeEmoji = event => {
-    const {emojisList} = this.props
     const {filteredList, score} = this.state
     this.setState(prevState => ({
       filteredList: [...prevState.filteredList, event.target.alt],
     }))
 
-    if (filteredList.includes(event.target.alt)) {
-      if (score === emojisList.length) {
-        this.setState({
+     if (filteredList.includes(event.target.alt)) {
+      this.setState({
+        navState: true,
+        wonOrLoseList: [
+          {
+            title: 'You Lose',
+            imageUrl:
+              'https://assets.ccbp.in/frontend/react-js/lose-game-img.png',
+            scoreTitle: 'Score',
+          },
+        ],
+      })
+    }
+    if (!filteredList.includes(event.target.alt)) {
+      if (score >= 11) {
+        this.setState(prevState => ({
+          score: prevState.score + 1,
           navState: true,
           wonOrLoseList: [
             {
@@ -51,28 +64,14 @@ class EmojiGame extends Component {
               imageUrl:
                 'https://assets.ccbp.in/frontend/react-js/won-game-img.png',
               scoreTitle: 'Best Score',
-              score,
             },
           ],
-        })
+        }))
       } else {
-        this.setState({
-          navState: true,
-          wonOrLoseList: [
-            {
-              title: 'You Lose',
-              imageUrl:
-                'https://assets.ccbp.in/frontend/react-js/lose-game-img.png',
-              scoreTitle: 'Score',
-              score,
-            },
-          ],
-        })
+        this.setState(prevState => ({
+          score: prevState.score + 1,
+        }))
       }
-    } else {
-      this.setState(prevState => ({
-        score: prevState.score + 1,
-      }))
     }
   }
 
@@ -105,6 +104,7 @@ class EmojiGame extends Component {
           <WinOrLoseCard
             wonOrLoseLists={wonOrLoseList}
             playAgainButton={this.playAgainClick}
+            realScore={score}
           />
         ) : (
           <div className="main-container">
